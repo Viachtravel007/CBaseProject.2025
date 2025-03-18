@@ -16,7 +16,7 @@ namespace DefaultProject
             new string[] { "Pick up the bike from Georg", "Evening online conference" },
             new string[] { "Buy food for the celebration", "Take a walk with the kids in the park." },
             new string[] { "Son's birthday", "Pick up my mother from the train station" },
-            new string[] { "Wish my nephew a happy birthday", "Pick up the car from the dealership" }
+            new string[] { }
         };
 
             Console.Write("Enter number from 1 to 7 (days of week): ");
@@ -27,13 +27,22 @@ namespace DefaultProject
             {
                 int index = input - 1;
                 Console.WriteLine($"Day: {weekDays[index]}");
-                Console.WriteLine("Tasks:");
-                Console.ForegroundColor = ConsoleColor.Red;
-                foreach (string element in tasks[index])
+                if (tasks[index].Length > 0)
                 {
-                    Console.WriteLine($"- {element}");
+                    Console.WriteLine("Tasks:");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    foreach (string element in tasks[index])
+                    {
+                        Console.WriteLine($"- {element}");
+                    }
+                    Console.ResetColor();
                 }
-                Console.ResetColor();
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Today just chill");
+                    Console.ResetColor();
+                }
             } 
             else
             {
