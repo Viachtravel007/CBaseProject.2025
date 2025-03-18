@@ -4,23 +4,20 @@
     {
         static void Main()
         {
-            string[] rainbowColors = { "Red", "Orange", "Yellow", "Green", "Blue", "Cyan", "Magenta" };
+            string[] weekDays = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
 
-            ConsoleColor[] colors = {
-            ConsoleColor.Red,
-            ConsoleColor.DarkYellow,
-            ConsoleColor.Yellow,
-            ConsoleColor.Green,
-            ConsoleColor.Blue,
-            ConsoleColor.Cyan,
-            ConsoleColor.Magenta
-            };
+            Console.Write("Enter number from 1 to 7 (days of week): ");
 
-            for (int i = 0; i < rainbowColors.Length; i++)
+            int input = int.Parse(Console.ReadLine());
+
+            if (input <= 0 || input >= 8)
             {
-                Console.ForegroundColor = colors[i];
-                Console.WriteLine(rainbowColors[i]);
+                Console.WriteLine("Invalid input");
+            } else
+            {
+                Console.WriteLine(weekDays[input - 1]);
             }
+
         }
     }
 }
