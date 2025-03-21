@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DefaultProject
 {
@@ -6,47 +7,65 @@ namespace DefaultProject
     {
         static void Main()
         {
-            string[] weekDays = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
 
-            string[][] tasks = new string[][]
-        {
-            new string[] { "Take my son to basketball", "Don't forget to wish Sullivan a happy birthday." },
-            new string[] { "Go to the mall for winter clothes", "Massage at 17:30" },
-            new string[] { "Fix the power outlet", "Parent-teacher meeting for my daughter" },
-            new string[] { "Pick up the bike from Georg", "Evening online conference" },
-            new string[] { "Buy food for the celebration", "Take a walk with the kids in the park." },
-            new string[] { "Son's birthday", "Pick up my mother from the train station" },
-            new string[] { }
-        };
+            Console.Write("Enter type operation which you want (+, -, *, / or ^): ");
 
-            Console.Write("Enter number from 1 to 7 (days of week): ");
+            string operation = Console.ReadLine();
 
-            int input = int.Parse(Console.ReadLine());
+            double number1, number2;
+            double result = 0;
 
-            if (input > 0 && input < 8)
+            switch (operation)
             {
-                int index = input - 1;
-                Console.WriteLine($"Day: {weekDays[index]}");
-                if (tasks[index].Length > 0)
-                {
-                    Console.WriteLine("Tasks:");
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    foreach (string element in tasks[index])
+                case "-":
+                    (number1, number2) = numberEnter();
+                    Console.WriteLine($"Result: {number1 - number2}");
+                    break;
+
+                case "+":
+                    (number1, number2) = numberEnter();
+                    Console.WriteLine($"Result: {number1 + number2}");
+                    break;
+
+                case "*":
+                    (number1, number2) = numberEnter();
+                    Console.WriteLine($"Result: {number1 * number2}");
+                    break;
+
+                case "/":
+                    (number1, number2) = numberEnter();
+                    if (number2 != 0)
+                        Console.WriteLine($"Result: {number1 / number2}");
+                    else
                     {
-                        Console.WriteLine($"- {element}");
+                        Console.WriteLine("Error: Division by zero");
                     }
-                    Console.ResetColor();
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Today just chill");
-                    Console.ResetColor();
-                }
-            } 
-            else
+                    break;
+
+                case "^":
+                    Console.Write("Input base number: ");
+                    number1 = double.Parse(Console.ReadLine());
+                    Console.Write("Input exponent: ");
+                    number2 = double.Parse(Console.ReadLine());
+                    result = Math.Pow(number1, number2);
+                    Console.WriteLine($"Result: {Math.Pow(number1, number2)}");
+                    break;
+
+                default:
+                    Console.WriteLine("Error");
+                    break;
+
+            }
+
+            static (double, double) numberEnter()
             {
-                Console.WriteLine("Invalid input number");
+                Console.Write("input first number: ");
+                double number1 = double.Parse(Console.ReadLine());
+
+                Console.Write("input second number: ");
+                double number2 = double.Parse(Console.ReadLine());
+
+                return (number1, number2);
             }
 
         }
