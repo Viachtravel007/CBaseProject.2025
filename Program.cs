@@ -4,7 +4,7 @@ namespace DefaultProject
 {
     internal class Program
     {
-        static void Main()
+        static void NoMain()
         {
 
             Console.Write("Enter type operation which you want (+, -, *, / or ^): ");
