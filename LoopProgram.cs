@@ -6,8 +6,9 @@ namespace LoopLoop
     {
         static void Main()
         {
-            Graphing();
+            
             CalculationAverage();
+            Graphing();
         }
 
         private static void CalculationAverage()
