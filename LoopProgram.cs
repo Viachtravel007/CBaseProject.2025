@@ -6,18 +6,24 @@ namespace LoopLoop
     {
         static void Main()
         {
+            Graphing();
+            CalculationAverage();
+        }
+
+        private static void CalculationAverage()
+        {
             Console.Write("Enter the number of employees: ");
             int count = int.Parse(Console.ReadLine());
 
-            string[] firstNames = { 
-                "Oleksandr", "Andrii", "Dmytro", "Ivan", 
-                "Taras", "Yurii", "Vasyl", "Petro", "Sofiia", 
-                "Anna", "Olha", "Kateryna", "Iryna", 
+            string[] firstNames = {
+                "Oleksandr", "Andrii", "Dmytro", "Ivan",
+                "Taras", "Yurii", "Vasyl", "Petro", "Sofiia",
+                "Anna", "Olha", "Kateryna", "Iryna",
                 "Nadiia", "Tetiana", "Natalia" };
-            string[] lastNames = { 
+            string[] lastNames = {
                 "Shevchenko", "Melnyk", "Kovalenko", "Boyko",
-                "Tkachenko", "Bondarenko", "Kravchenko", "Mazur", 
-                "Moroz", "Pavlenko", "Lysenko", "Rudenko", "Voitenko", 
+                "Tkachenko", "Bondarenko", "Kravchenko", "Mazur",
+                "Moroz", "Pavlenko", "Lysenko", "Rudenko", "Voitenko",
                 "Tymoshenko", "Yurchenko", "Zakharchenko" };
 
             Random random = new Random();
@@ -35,6 +41,33 @@ namespace LoopLoop
 
             double averageSalary = totalSalary / count;
             Console.WriteLine($"Average salary: {averageSalary:F2}");
+        }
+
+        private static void Graphing()
+        {
+            Console.Write("Enter the number of rows: ");
+            int numberOfRows = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= numberOfRows; i++)
+            {
+                Thread.Sleep(30);
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("*");
+                    Thread.Sleep(50);
+                }
+                Console.WriteLine();
+            }
+            for (int i = numberOfRows - 1; i >= 1; i--)
+            {
+                Thread.Sleep(30);
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("*");
+                    Thread.Sleep(50);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
