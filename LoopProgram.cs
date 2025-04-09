@@ -6,6 +6,7 @@ namespace LoopLoop
     {
         static void Main()
         {
+            FibonacciNumbers();
             PasswordCheck();
             CalculationAverage();
             Graphing();
@@ -98,6 +99,29 @@ namespace LoopLoop
             {
                 Console.WriteLine("Password dangerous");
             }
+        }
+
+        private static void FibonacciNumbers()
+        {
+            Console.Write("Enter number of Fibonacci numbers: ");
+            int Nu = int.Parse(Console.ReadLine());
+
+            if (Nu <= 0)
+            {
+                Console.WriteLine("enter a number greater than 0");
+                return;
+            }
+
+            long a = 0, b = 1;
+
+            for (int i = 0; i < Nu; i++)
+            {
+                Console.Write(a + " ");
+                long temp = a;
+                a = b;
+                b = temp + b;
+            }
+            Console.WriteLine();
         }
     }
 }
