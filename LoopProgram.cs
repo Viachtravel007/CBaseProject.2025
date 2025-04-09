@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LoopLoop
 {
@@ -10,6 +11,7 @@ namespace LoopLoop
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
 
+            MultiplicationTable();
             WorkingHours();
             FibonacciNumbers();
             PasswordCheck();
@@ -140,6 +142,19 @@ namespace LoopLoop
             double dailyPay = hoursWorked * hourlyRate;
 
             Console.WriteLine($"Daily pay: ₴{dailyPay}");
+        }
+
+        private static void MultiplicationTable()
+        {
+            Console.Write("Enter a number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"\nMultiplication table for {number}:");
+            for (int i = 1; i <= 10; i++)
+            {
+                int result = number * i;
+                Console.WriteLine($"{number} x {i} = {result}");
+            }
         }
     }
 }
