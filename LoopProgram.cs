@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace LoopLoop
 {
@@ -6,6 +7,10 @@ namespace LoopLoop
     {
         static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.UTF8;
+
+            WorkingHours();
             FibonacciNumbers();
             PasswordCheck();
             CalculationAverage();
@@ -122,6 +127,19 @@ namespace LoopLoop
                 b = temp + b;
             }
             Console.WriteLine();
+        }
+
+        private static void WorkingHours()
+        {
+            Console.Write("Enter number of hours worked today: ");
+            double hoursWorked = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter hourly wage: ");
+            double hourlyRate = double.Parse(Console.ReadLine());
+
+            double dailyPay = hoursWorked * hourlyRate;
+
+            Console.WriteLine($"Daily pay: ₴{dailyPay}");
         }
     }
 }
