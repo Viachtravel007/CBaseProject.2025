@@ -6,7 +6,7 @@ namespace LoopLoop
     {
         static void Main()
         {
-            
+            PasswordCheck();
             CalculationAverage();
             Graphing();
         }
@@ -68,6 +68,35 @@ namespace LoopLoop
                     Thread.Sleep(50);
                 }
                 Console.WriteLine();
+            }
+        }
+
+        private static void PasswordCheck()
+        {
+            Console.Write("Enter password: ");
+            string password = Console.ReadLine();
+
+            bool passwordHasSpecial = false;
+            bool passwordHasNumber = false;
+            bool passwordLong = password.Length >= 8;
+
+            foreach (char c in password)
+            {
+                if (!Char.IsLetterOrDigit(c))
+                {
+                    passwordHasSpecial = true;
+                } else if (Char.IsDigit(c))
+                {
+                    passwordHasNumber = true;
+                }
+            }
+
+            if (passwordHasNumber && passwordHasSpecial && passwordLong)
+            {
+                Console.WriteLine("Password secure");
+            } else
+            {
+                Console.WriteLine("Password dangerous");
             }
         }
     }
