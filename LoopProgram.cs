@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Text;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -11,12 +12,58 @@ namespace LoopLoop
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
 
-            MultiplicationTable();
-            WorkingHours();
-            FibonacciNumbers();
-            PasswordCheck();
-            CalculationAverage();
-            Graphing();
+            while (true)
+            {
+                Console.WriteLine("---------------------------------------");
+                Console.WriteLine("Select a method to execute (1-8):");
+                Console.WriteLine("1. PrimeNumbers");
+                Console.WriteLine("2. GeneratorPrimeNumbers");
+                Console.WriteLine("3. MultiplicationTable");
+                Console.WriteLine("4. WorkingHours");
+                Console.WriteLine("5. FibonacciNumbers");
+                Console.WriteLine("6. PasswordCheck");
+                Console.WriteLine("7. CalculationAverage");
+                Console.WriteLine("8. Graphing");
+                Console.WriteLine("Enter your choice (1-8), or 0 to exit:");
+
+                int choice = int.Parse(Console.ReadLine());
+
+                if (choice == 0)
+                {
+                    break;
+                }
+
+                switch (choice)
+                {
+                    case 1:
+                        PrimeNumbers();
+                        break;
+                    case 2:
+                        GeneratorPrimeNumbers();
+                        break;
+                    case 3:
+                        MultiplicationTable();
+                        break;
+                    case 4:
+                        WorkingHours();
+                        break;
+                    case 5:
+                        FibonacciNumbers();
+                        break;
+                    case 6:
+                        PasswordCheck();
+                        break;
+                    case 7:
+                        CalculationAverage();
+                        break;
+                    case 8:
+                        Graphing();
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Please select a number between 1 and 8.");
+                        break;
+                }
+            }
         }
 
         private static void CalculationAverage()
@@ -149,12 +196,60 @@ namespace LoopLoop
             Console.Write("Enter a number: ");
             int number = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"\nMultiplication table for {number}:");
+            Console.WriteLine($"Multiplication table for {number}:");
             for (int i = 1; i <= 10; i++)
             {
                 int result = number * i;
                 Console.WriteLine($"{number} x {i} = {result}");
             }
+        }
+
+        private static void PrimeNumbers()
+        {
+            Console.Write("Enter a number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            if (PrimeCheck(number))
+            {
+                Console.WriteLine("is prime number");
+            }
+            else
+            {
+                Console.WriteLine("is not prime number");
+            }
+        }
+
+        private static void GeneratorPrimeNumbers()
+        {
+            Console.Write("Enter a number: ");
+            int finalNumber = int.Parse(Console.ReadLine());
+
+            for (int number = 1; number <= finalNumber; number++)
+            {
+                if (PrimeCheck(number))
+                {
+                    Console.Write(number + " ");
+                }
+            }
+
+            Console.WriteLine();
+        }
+
+        private static bool PrimeCheck(int number)
+        {
+            if (number <= 1) return false;
+
+            if (number == 2) return true;
+
+            if (number % 2 == 0) return false;
+
+            int limit = (int)Math.Sqrt(number);
+            for (int i = 3; i <= limit; i += 2)
+            {
+                if (number % i == 0) return false;
+            }
+
+            return true;
         }
     }
 }
