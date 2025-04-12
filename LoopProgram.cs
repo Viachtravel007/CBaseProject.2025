@@ -7,7 +7,7 @@ namespace LoopLoop
 {
     class LoopProgram
     {
-        static void Main()
+        public static void AgainNoMain()
         {
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
