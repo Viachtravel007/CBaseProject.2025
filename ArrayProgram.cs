@@ -8,6 +8,18 @@ namespace DefaultProject
 {
     class ArrayProgram
     {
+
+        enum daysOfWeek
+        {
+            Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday,
+            Sunday
+        }
+
         public static void ArrayEnter()
         {
 
@@ -96,6 +108,12 @@ namespace DefaultProject
             }
             Console.WriteLine($"{minElement} with index ({indexMin[0]}; {indexMin[1]})");
             Console.WriteLine($"{maxElement} with index ({indexMax[0]}; {indexMax[1]})");
+            Console.WriteLine("---------------------------------------");
+
+            Console.Write("Enter the number of days: ");
+            int days = int.Parse(Console.ReadLine());
+            daysOfWeek day = (daysOfWeek)(days % 7);
+            Console.WriteLine($"The day is: {day}");
         }
-    }
+     }
 }
