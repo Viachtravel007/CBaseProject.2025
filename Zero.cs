@@ -10,11 +10,17 @@ namespace DefaultProject
     {
         public static void Dividing(double a, double b)
         {
-            if (b != 0)
+            try
             {
-                Console.Write($"boring, {a} / {b} = {a/b}");
+                if (b == 0)
+                {
+                    throw new DivideByZeroException();
+                }
+
+                double result = a / b;
+                Console.Write($"boring, {a} / {b} = {result}");
             }
-            else
+            catch (DivideByZeroException)
             {
                 Console.Write("No no no, b is zero, ayayay");
             }
