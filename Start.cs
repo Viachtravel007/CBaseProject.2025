@@ -11,15 +11,17 @@ namespace DefaultProject
     {
         static void Main()
         {
-            ArrayProgram.ArrayEnter();
+            ProcessingArray.DArrayProcessing();
 
-            Console.Write("Enter first number: ");
-            double a = Convert.ToDouble(Console.ReadLine());
+            //ArrayProgram.ArrayEnter();
 
-            Console.Write("Enter second number: ");
-            double b = Convert.ToDouble(Console.ReadLine());
+            //Console.Write("Enter first number: ");
+            //double a = Convert.ToDouble(Console.ReadLine());
 
-            Zero.Dividing(a, b);
+            //Console.Write("Enter second number: ");
+            //double b = Convert.ToDouble(Console.ReadLine());
+
+            //Zero.Dividing(a, b);
 
             //Program.NoMain();
 
