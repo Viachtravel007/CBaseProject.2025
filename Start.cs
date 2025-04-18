@@ -11,7 +11,9 @@ namespace DefaultProject
     {
         static void Main()
         {
-            ProcessingArray.DArrayProcessing();
+            //ProcessingArray.DArrayProcessing();
+
+            StringIsString.BaseStringOperation.NameNameCheck();
 
             //ArrayProgram.ArrayEnter();
 
