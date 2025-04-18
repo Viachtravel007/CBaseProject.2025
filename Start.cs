@@ -13,7 +13,9 @@ namespace DefaultProject
         {
             //ProcessingArray.DArrayProcessing();
 
-            StringIsString.BaseStringOperation.NameNameCheck();
+            //StringIsString.BaseStringOperation.NameNameCheck();
+
+            StringIsString.BaseStringOperation.spaceDellete();
 
             //ArrayProgram.ArrayEnter();
 

@@ -33,5 +33,13 @@ namespace DefaultProject.StringIsString
                 Console.Write("I think you have a name, so, congratulations?");
             }
         }
+
+        public static void spaceDelete()
+        {
+            string list = ("egg, milk, sugar, cookies");
+            StringBuilder stringBuilder = new StringBuilder(list);
+            stringBuilder.Replace(" ", "");
+            Console.Write(stringBuilder.ToString());
+        }
     }
 }
