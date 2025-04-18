@@ -15,7 +15,7 @@ namespace DefaultProject
 
             //StringIsString.BaseStringOperation.NameNameCheck();
 
-            StringIsString.BaseStringOperation.spaceDellete();
+            StringIsString.BaseStringOperation.reportGenerator();
 
             //ArrayProgram.ArrayEnter();
 

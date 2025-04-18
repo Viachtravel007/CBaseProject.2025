@@ -25,7 +25,8 @@ namespace DefaultProject.StringIsString
             string firstInitial = name[0].Substring(0, 1);
             string secoundInitial = name[1].Substring(0, 1);
 
-            if (string.Equals(firstInitial, secoundInitial, StringComparison.OrdinalIgnoreCase)) {
+            if (string.Equals(firstInitial, secoundInitial, StringComparison.OrdinalIgnoreCase))
+            {
                 Console.Write("OMG, your first and last name start from the same letter!");
             }
             else
@@ -40,6 +41,33 @@ namespace DefaultProject.StringIsString
             StringBuilder stringBuilder = new StringBuilder(list);
             stringBuilder.Replace(" ", "");
             Console.Write(stringBuilder.ToString());
+        }
+
+        public static void reportGenerator()
+        {
+            StringBuilder reportBuild = new StringBuilder();
+
+            Console.Write("Enter title: ");
+            string title = Console.ReadLine();
+
+            reportBuild.AppendLine($"title: {title}");
+            reportBuild.AppendLine($"Date: {DateTime.Now.ToShortDateString()}");
+            reportBuild.AppendLine("Events:");
+
+            Console.WriteLine("Enter events (type 'exit' to finish):");
+
+            while (true)
+            {
+                string eventInput = Console.ReadLine();
+
+                if (string.Equals(eventInput, "exit", StringComparison.OrdinalIgnoreCase))
+                    break;
+
+                reportBuild.AppendLine($"- {eventInput}");
+            }
+
+            Console.WriteLine("ready report:");
+            Console.WriteLine(reportBuild.ToString());
         }
     }
 }
