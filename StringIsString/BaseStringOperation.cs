@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,10 +38,49 @@ namespace DefaultProject.StringIsString
 
         public static void spaceDelete()
         {
-            string list = ("egg, milk, sugar, cookies");
-            StringBuilder stringBuilder = new StringBuilder(list);
+            Console.Write("offer sacrifice to the gods of space: ");
+            string sacrifice = Console.ReadLine();
+            if (!sacrifice.Contains(" "))
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                LOOK();
+                return;
+            }
+            StringBuilder stringBuilder = new StringBuilder(sacrifice);
             stringBuilder.Replace(" ", "");
             Console.Write(stringBuilder.ToString());
+        }
+
+        private static void LOOK()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Random random = new Random();
+
+            string message = "you want to deceive the gods?";
+            string chars = "!@#$%^&*()_+-=<>?/|[]{}abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+
+            for (int i = 0; i < message.Length; i++)
+            {
+                for (int glitch = 0; glitch < 13; glitch++)
+                {
+                    char[] destructionMessage = message.ToCharArray();
+
+                    for (int j = i; j < message.Length; j++)
+                    {
+                        destructionMessage[j] = chars[random.Next(chars.Length)];
+                    }
+
+                    Console.SetCursorPosition(0, Console.CursorTop);
+                    Console.Write(new string(destructionMessage));
+                    Thread.Sleep(15);
+                }
+
+                Console.SetCursorPosition(0, Console.CursorTop);
+                Console.Write(message.Substring(0, i + 1));
+                Thread.Sleep(30);
+            }
+
+            Console.ResetColor();
         }
 
         public static void reportGenerator()
