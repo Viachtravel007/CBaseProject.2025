@@ -12,8 +12,6 @@ namespace DefaultProject
         {
             if (number <= 0 || number > 47)
             {
-                Console.WriteLine($"the developer is so poor that he cannot optimize the method for the number {number}");
-                //return 101;
                 throw new ArgumentOutOfRangeException(nameof(number), $"the developer is so poor that he cannot optimize the method for the number {number}");
             }
             if (number == 1) 
