@@ -11,11 +11,14 @@ namespace DefaultProject
     {
         static void Main()
         {
+            Console.Write("Enter number: ");
+            int number = int.Parse(Console.ReadLine());
+
             //ProcessingArray.DArrayProcessing();
 
             //StringIsString.BaseStringOperation.NameNameCheck();
 
-            StringIsString.BaseStringOperation.spaceDelete();
+            Console.Write($"The {number}th Fibonacci number is {Fibonacci.whichFibonacci(number)}");
 
             //ArrayProgram.ArrayEnter();
 
