@@ -1,4 +1,5 @@
-﻿using DefaultProject.lesson_7.task_7._1;
+﻿using DefaultProject.Lesson_11.task_11._1;
+using DefaultProject.lesson_7.task_7._1;
 using LoopLoop;
 using System;
 using System.Collections.Generic;
@@ -13,16 +14,16 @@ namespace DefaultProject
         static void Main()
         {
 
-            //GameTicTacToe.Exec();
+            GameHangman.Executor();
 
-            Console.Write("Enter number: ");
-            int number = int.Parse(Console.ReadLine());
+            //Console.Write("Enter number: ");
+            //int number = int.Parse(Console.ReadLine());
 
             ////ProcessingArray.DArrayProcessing();
 
             ////StringIsString.BaseStringOperation.NameNameCheck();
 
-            Console.Write($"The {number}th Fibonacci number is {Fibonacci.whichFibonacci(number)}");
+            //Console.Write($"The {number}th Fibonacci number is {Fibonacci.whichFibonacci(number)}");
 
             //ArrayProgram.ArrayEnter();
 
