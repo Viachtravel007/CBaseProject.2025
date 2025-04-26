@@ -1,4 +1,5 @@
-﻿using DefaultProject.Lesson_11.task_11._1;
+﻿using DefaultProject.Lesson_13.task_13._1;
+using DefaultProject.Lesson_14.task_14._1;
 using DefaultProject.lesson_7.task_7._1;
 using LoopLoop;
 using System;
@@ -14,7 +15,7 @@ namespace DefaultProject
         static void Main()
         {
 
-            GameHangman.Executor();
+            BankAccount.Demonstrator();
 
             //Console.Write("Enter number: ");
             //int number = int.Parse(Console.ReadLine());
