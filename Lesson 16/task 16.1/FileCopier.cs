@@ -15,7 +15,7 @@ namespace DefaultProject.Lesson_16.task_16._1
                 Console.Write(@"Enter the path to the first file, source (Like: T:\NotMyComputer\USAMillitarySecret.txt): ");
                 string sourcePath = Console.ReadLine();
 
-                Console.Write(@"Enter the path to the first file, source (Like: T:\NotMyComputer\CopiedSecret.txt): ");
+                Console.Write(@"Enter the path to the secound file, destination (Like: T:\NotMyComputer\CopiedSecret.txt): ");
                 string destinationPath = Console.ReadLine();
 
                 if (!File.Exists(sourcePath))
