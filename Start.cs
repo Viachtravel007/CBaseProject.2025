@@ -1,5 +1,6 @@
 ﻿using DefaultProject.Lesson_13.task_13._1;
 using DefaultProject.Lesson_14.task_14._1;
+using DefaultProject.Lesson_16.task_16._1;
 using DefaultProject.lesson_7.task_7._1;
 using LoopLoop;
 using System;
@@ -15,7 +16,7 @@ namespace DefaultProject
         static void Main()
         {
 
-            BankAccount.Demonstrator();
+            FileCopier.CopyPaste();
 
             //Console.Write("Enter number: ");
             //int number = int.Parse(Console.ReadLine());
